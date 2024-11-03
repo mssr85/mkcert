@@ -38,7 +38,22 @@ On macOS, use [Homebrew](https://brew.sh/)
 ```
 brew install mkcert
 brew install nss # if you use Firefox
-```
+$ mkcert -install
+Created a new local CA 💥
+The local CA is now installed in the system trust store! ⚡️
+The local CA is now installed in the Firefox trust store (requires browser restart)! 🦊
+
+$ mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
+
+Created a new certificate valid for the following names 📜
+ - "example.com"
+ - "*.example.com"
+ - "example.test"
+ - "localhost"
+ - "127.0.0.1"
+ - "::1"
+
+The certificate is at "./example.com+5.pem" and the key at "./example.com+5-key.pem" ✅``
 
 or [MacPorts](https://www.macports.org/).
 
@@ -195,3 +210,4 @@ Installing in the trust store does not require the CA key, so you can export the
 * run `mkcert -install`
 
 Remember that mkcert is meant for development purposes, not production, so it should not be used on end users' machines, and that you should *not* export or share `rootCA-key.pem`.
+
